@@ -46,7 +46,7 @@ class Hh(HhAPI):
         while self.params.get("page") != 20:
             response = self.get_connect()
             vacancies = response.json()['items']
-            vacancies_list.append(vacancies)
+            vacancies_list.extend(vacancies)
             self.params["page"] += 1
 
         return vacancies_list
